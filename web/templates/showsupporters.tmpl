@@ -14,3 +14,26 @@
 		</div>
 	</div>
 </header>
+
+<h3 style="text-align: center;">Most Recent Supporters</h3>
+
+<div class="container">
+	<table class="u-full-width">
+		<thead>
+			<tr>
+				<th>First Name</th>
+				<th>Last Name</th>
+				<th>Country</th>
+			</tr>
+		</thead>
+		<tbody>
+			{{range .Data.Supporters}}
+			<tr>
+				<td>{{.FirstName}}</td>
+				<td>{{.LastName}}</td>
+				<td>{{.CountryName}}</td>
+			</tr>
+			{{end}}
+		</tbody>
+	</table>
+</div>

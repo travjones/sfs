@@ -157,7 +157,7 @@ func (c *ctx) NewSupporterPost(w http.ResponseWriter, r *http.Request) {
 
 func (c *ctx) ShowSupporters(w http.ResponseWriter, r *http.Request) {
 
-	// most recent supporters select fn, ln, country from supporter oder by supporter_id desc limit 7
+	// most recent supporters
 	supporters := []Supporter{}
 
 	mostRecentQ := `select s.first_name, s.last_name, s.country_id, c.name
@@ -196,7 +196,7 @@ func main() {
 	})
 
 	//init db
-	db, err := sqlx.Connect("mysql", "root:blahblah92@tcp(127.0.0.1:3306)/sfs")
+	db, err := sqlx.Connect("mysql", "root:slurp@tcp(127.0.0.1:3306)/sfs")
 	if err != nil {
 		log.Print(err)
 		log.Print("Error initializing database...")
