@@ -1,0 +1,44 @@
+<header>
+	<div class="nav-bar" class="row">
+		<div class="twelve columns">
+			<div class="u-pull-left">
+				<a href="/">
+					<h1 class="sfs">Safety for Refugees</h1>
+				</a>
+			</div>
+			<div class="u-pull-right" style="height: 50px">
+				<a href="/love">
+					<h1 class="supporters-nav">Supporters ♥</h1>
+				</a>
+			</div>
+		</div>
+	</div>
+</header>
+<div class="container u-full-width">
+	<div class="row">
+		<div class="twelve columns card">
+			<p class="card-text">Currently, an increasing number of people from Syria are stuck without a safe place to live. They are refugees fleeing their homes in order to survive. I would be happy to have a Syrian neighbor and I expect that others share this mentality. If you support your country welcoming Syrian refugees submit the form below.</p>
+		</div>
+		<div class="twelve columns card" style="margin-top: 10px;">
+			<form name="newSupporter" method="POST">
+				<div class="row">
+					<div class="six columns">
+						<label for="firstName">First name</label>
+						<input class="u-full-width" type="text" placeholder="first name" id="firstName" name="firstName"></input>
+					</div>
+					<div class="six columns">
+						<label for="lastName">Last name</label>
+						<input class="u-full-width" type="text" placeholder="last name" id="lastName" name="lastName"></input>
+					</div>
+					<label for="country">Country</label>
+					<select class="u-full-width" id="country" name="country">
+						{{range $id := .Data.IDs}}
+						<option value="{{$id}}">{{$id}}</option>
+						{{end}}
+					</select>
+				</div>
+				<input class="u-full-width" type="submit" value="Submit" style="background-color: #2ecc71; color: #FFFFFF;margin-bottom: 0;">
+			</form>
+		</div>
+	</div>
+</div>
